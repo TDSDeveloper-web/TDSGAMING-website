@@ -1,0 +1,93 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .header {
+      overflow: hidden;
+      background-color: lightslategrey;
+      padding: 20px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header a {
+      margin-top: auto;
+      float: left;
+      color: black;
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 25px;
+      border-radius: 4px;
+    }
+    .header a.logo {
+      font-size: 25px;
+      font-weight: bold;
+    }
+    .header a:hover {
+      background-color: black;
+      color: limegreen;
+    }
+    .header a.active {
+      background-color: black;
+      color: limegreen;
+    }
+    .header-right {
+      float: right;
+    }
+    @media screen and (max-width: 500px) {
+      .header a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+      .header-right {
+        float: none;
+      }
+    }
+    .content {
+      text-align: center;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div style="font-size: 100px;"><b>T D S</b></div>
+    <div class="header-right">
+      <a href="index.html" style="font-size: 30px;"><b>Home</b></a>
+      <a href="lybrary.html" style="font-size: 30px;"><b>Games</b></a>
+      <a href="About.html" style="font-size: 30px;"><b>About</b></a>
+      <a class="active" href="Help.html" style="font-size: 30px;"><b>Help</b></a>
+    </div>
+  </div>
+  <div class="content">
+    <h1>Help</h1>
+    <p>Need assistance? We're here to help! </p>
+    <p><strong>Contact Us:</strong></p>
+    <p>Phone: 0212252770</p>
+    <p>Email: christiandittmart@gmail.com</p>
+  </div>
+  <div class="footer">
+    <p>Copyright &copy; 2023 TDS.</p>
+  </div>
+</body>
+</html>
+<style>
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: whitesmoke;
+    color: lightslategrey;
+    text-align: center;
+}

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Fireboy and Watergirl in the Forest Temple</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .header {
+      overflow: hidden;
+      background-color: lightslategrey;
+      padding: 20px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header a {
+      float: left;
+      color: black;
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 25px;
+      border-radius: 4px;
+    }
+
+    .header a.logo {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .header a:hover {
+      background-color: black;
+      color: limegreen;
+    }
+
+    .header a.active {
+      background-color: black;
+      color: limegreen;
+    }
+
+    .header-right {
+      float: right;
+    }
+
+    @media screen and (max-width: 500px) {
+      .header a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+
+      .header-right {
+        float: none;
+      }
+    }
+
+    #fullscreen-btn {
+      background-color: #ff9900;
+      color: white;
+      border: 1px solid #ff9900;
+      padding: 10px 20px;
+      font-size: 26px;
+      cursor: pointer;
+      border-radius: 10px;
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    #fullscreen-btn:hover {
+      background-color: #e68a00;
+    }
+
+    .game-info {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .field-game {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .field-game iframe {
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <div style="font-size: 100px;"><b>T D S</b></div>
+    <div class="header-right">
+      <a href="../index.html" style="font-size: 30px;"><b>Home</b></a>
+      <a class="active" href="../lybrary.html" style="font-size: 30px;"><b>Games</b></a>
+      <a href="../About.html" style="font-size: 30px;"><b>About</b></a>
+      <a href="../Help.html" style="font-size: 30px;"><b>Help</b></a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>Fireboy and Watergirl in the Forest Temple</h1>
+    <!-- Embedded Game -->
+    <div class="field-game iframe-url-game" id="swfgamewrapper" style="height:546px;">
+      <iframe id="html5game" src="https://www.coolmathgames.com/sites/default/files/public_games/40034/?gd_sdk_referrer_url=https%3A%2F%2Fwww.coolmathgames.com%2F0-fireboy-and-water-girl-in-the-forest-temple"
+        class=" no-select" width="728px" height="546px" scrolling="no" marginwidth="0" vspace="0" frameborder="0"
+        hspace="0" marginheight="0" allow="web-share; clipboard-read; clipboard-write"
+        aria-label="Fireboy and Watergirl in the Forest Temple Game Content" tabindex="-1"></iframe>
+    </div>
+    <!-- Fullscreen Button -->
+    <center>
+      <button id="fullscreen-btn">Play in Fullscreen</button>
+    </center>
+
+    <div class="game-info">
+      <h2>Storyline:</h2>
+      <p>In *Fireboy and Watergirl in the Forest Temple*, the two characters must work together to overcome obstacles and solve puzzles in an ancient temple. Fireboy can handle fire but must avoid water, while Watergirl can handle water but must avoid fire. They need to collect gems and navigate through tricky levels filled with hazards, switches, and traps to reach their exits safely.</p>
+
+      <h2>Controls:</h2>
+      <p><strong>Controls for PC:</strong></p>
+      <ul>
+        <li><b>Fireboy:</b> Use the arrow keys to move.</li>
+        <li><b>Watergirl:</b> Use the WASD keys to move.</li>
+      </ul>
+      <p>Guide both characters simultaneously or team up with a friend for cooperative gameplay!</p>
+    </div>
+  </div>
+
+  <script>
+    const fullscreenBtn = document.getElementById("fullscreen-btn");
+    const iframe = document.getElementById("html5game");
+
+    fullscreenBtn.addEventListener("click", function () {
+      if (!document.fullscreenElement) {
+        // Request fullscreen for the iframe
+        if (iframe.requestFullscreen) {
+          iframe.requestFullscreen();
+        } else if (iframe.mozRequestFullScreen) { // Firefox
+          iframe.mozRequestFullScreen();
+        } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+          iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) { // IE/Edge
+          iframe.msRequestFullscreen();
+        }
+      } else {
+        // Exit fullscreen mode
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) { // Firefox
+          document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) { // Chrome, Safari, and Opera
+          document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { // IE/Edge
+          document.msExitFullscreen();
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

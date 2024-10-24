@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Learn to Fly 3</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .header {
+      overflow: hidden;
+      background-color: lightslategrey;
+      padding: 20px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header a {
+      float: left;
+      color: black;
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 25px;
+      border-radius: 4px;
+    }
+
+    .header a.logo {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .header a:hover {
+      background-color: black;
+      color: limegreen;
+    }
+
+    .header a.active {
+      background-color: black;
+      color: limegreen;
+    }
+
+    .header-right {
+      float: right;
+    }
+
+    @media screen and (max-width: 500px) {
+      .header a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+
+      .header-right {
+        float: none;
+      }
+    }
+
+    #fullscreen-btn {
+      background-color: #ff9900;
+      color: #fff;
+      border: 1px solid #ff9900;
+      font-size: 26px;
+      width: 40%;
+      cursor: pointer;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    #fullscreen-btn:hover {
+      background-color: #e68a00;
+    }
+
+    .game-info {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">
+    <div style="font-size: 100px;"><b>T D S</b></div>
+    <div class="header-right">
+      <a href="../index.html" style="font-size: 30px;"><b>Home</b></a>
+      <a class="active" href="../lybrary.html" style="font-size: 30px;"><b>Games</b></a>
+      <a href="../About.html" style="font-size: 30px;"><b>About</b></a>
+      <a href="../Help.html" style="font-size: 30px;"><b>Help</b></a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>Learn to Fly 3</h1>
+    <!-- Embedded Learn to Fly 3 -->
+    <iframe id="innerFrame" name="innerFrame" sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads allow-storage-access-by-user-activation" src="https://sipragio06.github.io/learn3/">
+    </iframe>
+
+    <!-- Fullscreen Button -->
+    <center>
+      <button id="fullscreen-btn">Fullscreen</button>
+    </center>
+
+    <div class="game-info">
+      <h2>Game Description:</h2>
+      <p><strong>Learn to Fly 3</strong> is a fun physics-based game where you help a determined penguin fly into space! Use upgrades, purchase new equipment, and adjust your strategies to launch higher and farther with every attempt.</p>
+      
+      <h2>Controls:</h2>
+      <p>PC: 
+        <ul>
+          <li><strong>Arrow keys:</strong> Adjust the angle during flight.</li>
+          <li><strong>Spacebar:</strong> Use boosts.</li>
+          <li><strong>Mouse:</strong> Navigate menus and upgrade items.</li>
+        </ul>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const fullscreenBtn = document.getElementById("fullscreen-btn");
+    const innerFrame = document.getElementById("innerFrame");
+
+    fullscreenBtn.addEventListener("click", function () {
+      if (!document.fullscreenElement) {
+        // Request fullscreen for the iframe element
+        if (innerFrame.requestFullscreen) {
+          innerFrame.requestFullscreen();
+        } else if (innerFrame.mozRequestFullScreen) { // Firefox
+          innerFrame.mozRequestFullScreen();
+        } else if (innerFrame.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+          innerFrame.webkitRequestFullscreen();
+        } else if (innerFrame.msRequestFullscreen) { // IE/Edge
+          innerFrame.msRequestFullscreen();
+        }
+      } else {
+        // Exit fullscreen mode
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) { // Firefox
+          document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) { // Chrome, Safari, and Opera
+          document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { // IE/Edge
+          document.msExitFullscreen();
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html>
